@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Signpost : ActionItem
 {
+    public string[] dialogue;
     public override void Interact()
     {
-        base.Interact();
+        DialogueSystem.Instance.AddnewDialogue(dialogue, "Sign");
         Debug.Log("Interacting with Signpost");
     }
 }
