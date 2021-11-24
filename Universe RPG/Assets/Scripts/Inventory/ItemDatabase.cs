@@ -7,7 +7,7 @@ public class ItemDatabase : MonoBehaviour
 {
     public static ItemDatabase Instance { get; set; }
     private List<Item> Items { get; set; }
-    void Start()
+    void Awake()
     {
         if(Instance != null && Instance != this)
             Destroy(gameObject);
@@ -19,7 +19,7 @@ public class ItemDatabase : MonoBehaviour
     private void BuildDatabase()
     {
         Items = JsonConvert.DeserializeObject<List<Item>>(Resources.Load<TextAsset>("JSON/Items").ToString());
-        Debug.Log(Items[0].Stats[1].StatName + " level is " + Items[0].Stats[1].GetCalculatedStatValue());
+        Debug.Log(Items[1].ItemName + " is a " + Items[1].ItemType.ToString());
         Debug.Log(Items[0].ItemName);
     }
 
