@@ -1,0 +1,26 @@
+[
+    {
+        "objectSlug": "sword",
+        "itemName": "Sword",
+        "description": "A long bronze blade.",
+        "actionName": "Equip",
+        "itemModifier": 0,
+        "stats": [
+            {
+                "baseValue": 2,
+                "statName": "Power"
+            },
+            {
+                "baseValue": 4,
+                "statName": "Speed"
+            }
+        ]
+    },
+    {
+        "objectSlug": "potion_log",
+        "itemName": "Log Potion",
+        "description": "A potion that logs something to the console.",
+        "actionName": "Drink",
+        "itemModifier": 0
+    }
+]

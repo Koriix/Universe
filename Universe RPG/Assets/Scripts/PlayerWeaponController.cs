@@ -31,8 +31,22 @@ public class PlayerWeaponController : MonoBehaviour
         Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.F));
+            PerformWeaponAttack();
+
+        if(Input.GetKeyDown(KeyCode.G));
+            PerformWeaponAttack();
+    }
+
     public void PerformWeaponAttack()
     {
         equippedWeapon.PeformAttack();
+    }
+
+    public void PerformWeaponSpecialAttack()
+    {
+        equippedWeapon.PeformSpecialAttack();
     }
 }
