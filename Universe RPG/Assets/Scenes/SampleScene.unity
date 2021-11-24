@@ -2051,6 +2051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1622378232313904, guid: f50a68efcef03a246b5ec7635f125d3d, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4406749274061914, guid: f50a68efcef03a246b5ec7635f125d3d, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2883,6 +2887,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e118e8c93f1b5948a021053cff86ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHealth: 0
+  maxHealth: 100
+--- !u!136 &1125341567
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125341561}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 1.85
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.94, z: 0}
 --- !u!4 &1125341568 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4406749274061914, guid: f50a68efcef03a246b5ec7635f125d3d, type: 3}
@@ -4372,8 +4392,9 @@ GameObject:
   - component: {fileID: 1754226552}
   - component: {fileID: 1754226551}
   - component: {fileID: 1754226550}
-  - component: {fileID: 1754226556}
   - component: {fileID: 1754226555}
+  - component: {fileID: 1754226556}
+  - component: {fileID: 1754226557}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -4393,9 +4414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1bb5d79ec358d945b237ad35546502c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aggroLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   currentHealth: 0
-  power: 5
-  toughness: 5
   maxHealth: 20
 --- !u!65 &1754226551
 BoxCollider:
@@ -4504,6 +4526,28 @@ MonoBehaviour:
   playerAgent: {fileID: 0}
   dialogue: []
   name: 
+--- !u!195 &1754226557
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754226549}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 5
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 350
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1867941908
 GameObject:
   m_ObjectHideFlags: 0

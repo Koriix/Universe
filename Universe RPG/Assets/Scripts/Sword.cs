@@ -9,13 +9,16 @@ public class Sword : MonoBehaviour, IWeapon
     public List<BaseStat> Stats { get; set; }
     public CharacterStats CharacterStats { get; set; }
 
+    public int CurrentDamage { get; set; }
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void PeformAttack()
+    public void PeformAttack(int damage)
     {
+        CurrentDamage = damage;
         animator.SetTrigger("Base_Attack");
     }
 

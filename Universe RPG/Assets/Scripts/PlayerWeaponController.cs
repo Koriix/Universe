@@ -7,6 +7,7 @@ public class PlayerWeaponController : MonoBehaviour
     public GameObject playerHand;
     public GameObject EquippedWeapon { get; set; }
 
+    Item currentlyEquippedItem;
     IWeapon equippedWeapon;
     CharacterStats characterStats;
 
@@ -19,16 +20,17 @@ public class PlayerWeaponController : MonoBehaviour
     {
         if(EquippedWeapon != null)
         {
+            InventoryController.Instance.GiveItem(currentlyEquippedItem.ObjectSlug);
             characterStats.RemoveStatBonus(EquippedWeapon.GetComponent<IWeapon>().Stats);
             Destroy(playerHand.transform.GetChild(0).gameObject);
         }
         EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug),
             playerHand.transform.position, playerHand.transform.rotation);
         equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
-        equippedWeapon.Stats = itemToEquip.Stats;
         EquippedWeapon.transform.SetParent(playerHand.transform);
+        equippedWeapon.Stats = itemToEquip.Stats;
+        currentlyEquippedItem = itemToEquip;
         characterStats.AddStatBonus(itemToEquip.Stats);
-        Debug.Log(equippedWeapon.Stats[0].GetCalculatedStatValue());
     }
 
     void Update()
@@ -42,11 +44,29 @@ public class PlayerWeaponController : MonoBehaviour
 
     public void PerformWeaponAttack()
     {
-        equippedWeapon.PeformAttack();
+        equippedWeapon.PeformAttack(CalculateDamage());
     }
 
     public void PerformWeaponSpecialAttack()
     {
         equippedWeapon.PeformSpecialAttack();
+    }
+
+    private int CalculateDamage()
+    {
+        int damageToDeal = (characterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue() * 2)
+           + Random.Range(2, 8);
+        damageToDeal += CalculateCrit(damageToDeal);
+        return damageToDeal;
+    }
+
+    private int CalculateCrit(int damage)
+    {
+        if(Random.value <= .10f)
+        {
+            int critDamage = (int)(damage * Random.Range(.5f, .75f));
+            return critDamage;
+        }
+        return 0;
     }
 }

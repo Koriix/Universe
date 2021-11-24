@@ -5,6 +5,7 @@ using UnityEngine;
 public interface IWeapon
 {
    List<BaseStat> Stats { get; set; }
-   void PeformAttack();
+   int CurrentDamage { get; set; }
+   void PeformAttack(int damage);
    void PeformSpecialAttack();
 }
