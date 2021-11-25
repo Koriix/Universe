@@ -9,7 +9,7 @@
         "stats": [
             {
                 "statType": "Power",
-                "baseValue": 25,
+                "baseValue": 4,
                 "statName": "Power"
             },
             {
@@ -20,7 +20,7 @@
             {
                 "statType": "AttackSpeed",
                 "baseValue": 4,
-                "statName": "Attack Speed"
+                "statName": "Atk Spd"
             }
         ]
     },

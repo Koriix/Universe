@@ -10,16 +10,15 @@ public class DialogueSystem : MonoBehaviour
     public string npcName;
     public List<string> dialogueLines = new List<string>();
 
-    Button nextButton;
+    public Button nextButton; 
+
     Text dialogueText, nameText;
     int dialogueIndex;
 
     void Awake()
     {
-        nextButton = dialoguePanel.transform.Find("Next").GetComponent<Button>();
         dialogueText = dialoguePanel.transform.Find("Text").GetComponent<Text>();
-        nameText = dialoguePanel.transform.Find("Name").GetChild(0).GetComponent<Text>();
-        nextButton.onClick.AddListener(delegate { ContinueDialogue(); });
+        nameText = dialoguePanel.transform.Find("Name").GetComponentInChildren<Text>();
         dialoguePanel.SetActive(false);
 
 
@@ -31,6 +30,12 @@ public class DialogueSystem : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    public void Start()
+    {
+        //nextButton = dialoguePanel.transform.Find("Next").gameObject.GetComponent<Button>();
+        nextButton.onClick.AddListener(ContinueDialogue);
     }
 
     public void AddnewDialogue(string[] lines, string npcName)

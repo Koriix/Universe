@@ -9,6 +9,13 @@ public class InventoryUIItem : MonoBehaviour
 
     public Text itemText;
     public Image itemImage;
+    private Button btn;
+
+    public void Start()
+    {
+        Button btn = this.GetComponent<Button>();
+		btn.onClick.AddListener(OnSelectItemButton);
+    }
 
     public void SetItem(Item item)
     {

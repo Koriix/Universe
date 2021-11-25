@@ -11,15 +11,22 @@ public class Sword : MonoBehaviour, IWeapon
 
     public int CurrentDamage { get; set; }
 
+    private IEnemy tmpenemy;
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
+    
+
     public void PeformAttack(int damage)
     {
         CurrentDamage = damage;
         animator.SetTrigger("Base_Attack");
+        if(tmpenemy != null)
+            tmpenemy.TakeDamage(CurrentDamage);
+        Debug.Log("DMDMDMDMMDD: " + CurrentDamage);
     }
 
     public void PeformSpecialAttack()
@@ -31,7 +38,19 @@ public class Sword : MonoBehaviour, IWeapon
     {
         if(col.tag == "Enemy")
         {
-            col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
+            //col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
+            tmpenemy = col.GetComponent<IEnemy>();
+            
+        }
+    }
+
+    void OnTriggerExit(Collider col)
+    {
+        if(col.tag == "Enemy")
+        {
+            //col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
+            tmpenemy = null;
+            
         }
     }
 

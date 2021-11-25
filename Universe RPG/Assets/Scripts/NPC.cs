@@ -9,6 +9,5 @@ public class NPC : Interactable
     public override void Interact()
     {
         DialogueSystem.Instance.AddnewDialogue(dialogue, name);
-        Debug.Log("Interacting with NPC");
     }
 }
