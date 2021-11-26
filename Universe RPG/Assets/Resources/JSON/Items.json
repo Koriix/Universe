@@ -15,11 +15,36 @@
             {
                 "statType": "Toughness",
                 "baseValue": 4,
-                "statName": "Toughness"
+                "statName": "Tough"
             },
             {
                 "statType": "AttackSpeed",
                 "baseValue": 4,
+                "statName": "Atk Spd"
+            }
+        ]
+    },
+    {
+        "objectSlug": "sword_lava",
+        "itemName": "Lava Sword",
+        "description": "This sword made by the Lava Civilization.",
+        "itemType": "Weapon",
+        "actionName": "Equip",
+        "itemModifier": 0,
+        "stats": [
+            {
+                "statType": "Power",
+                "baseValue": 30,
+                "statName": "Power"
+            },
+            {
+                "statType": "Toughness",
+                "baseValue": 6,
+                "statName": "Tough"
+            },
+            {
+                "statType": "AttackSpeed",
+                "baseValue": 1,
                 "statName": "Atk Spd"
             }
         ]

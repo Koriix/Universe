@@ -26,7 +26,7 @@ public class Sword : MonoBehaviour, IWeapon
         animator.SetTrigger("Base_Attack");
         if(tmpenemy != null)
             tmpenemy.TakeDamage(CurrentDamage);
-        Debug.Log("DMDMDMDMMDD: " + CurrentDamage);
+        Debug.Log("Current Damage: " + CurrentDamage);
     }
 
     public void PeformSpecialAttack()

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 1784720818091562709}
   m_Layer: 0
   m_Name: sword
-  m_TagString: Untagged
+  m_TagString: Interactable Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,7 +107,7 @@ Animator:
   m_GameObject: {fileID: 7746047496225422944}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ea3ed87ba384f024eb28a5cf0dc083f7, type: 2}
+  m_Controller: {fileID: 9100000, guid: c67a5d89667f0bb498473346a7b91fed, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -33,7 +33,14 @@ public class CharacterPanel : MonoBehaviour
         UIEventHandler.OnPlayerHealthChanged += UpdateHealth;
         UIEventHandler.OnStatsChanged += UpdateStats;
         UIEventHandler.OnItemEquipped += UpdateEquippedWeapon;
+        UIEventHandler.OnPlayerLevelChange += UpdateLevel;
         InitializeStats();
+    }
+
+    void UpdateLevel()
+    {
+        this.level.text = player.playerLevel.Level.ToString();
+        this.levelFill.fillAmount = (float)player.playerLevel.CurrentExp / (float)player.playerLevel.RequiredExp;
     }
 
     void UpdateHealth(int currentHealth, int maxHealth)

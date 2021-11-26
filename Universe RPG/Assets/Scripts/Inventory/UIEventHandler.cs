@@ -12,7 +12,7 @@ public class UIEventHandler : MonoBehaviour
     public static event PlayerHealthEventHandler OnPlayerHealthChanged;
 
     public delegate void PlayerLevelEventHandler();
-    public static event PlayerLevelEventHandler OnPlayerLevel;
+    public static event PlayerLevelEventHandler OnPlayerLevelChange;
 
     public delegate void StatsEventHandler();
     public static event StatsEventHandler OnStatsChanged;
@@ -34,11 +34,16 @@ public class UIEventHandler : MonoBehaviour
 
     public static void PlayerLeveled()
     {
-        OnPlayerLevel();
+        OnPlayerLevelChange();
     }
 
     public static void StatsChanged()
     {
         OnStatsChanged();
+    }
+
+    public static void PlayerLevelChanged()
+    {
+        OnPlayerLevelChange();
     }
 }

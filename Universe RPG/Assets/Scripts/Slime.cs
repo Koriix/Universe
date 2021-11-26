@@ -9,6 +9,11 @@ public class Slime : MonoBehaviour, IEnemy
     public LayerMask aggroLayerMask;
     public float currentHealth;
     public float maxHealth;
+    public int ID { get; set; }
+    public int Exp { get; set; }
+    public DropTable DropTable { get; set; }
+    public Spawner Spawner { get; set; }
+    public PickupItem pickupItem;
 
     private Player player;
     private NavMeshAgent navAgent;
@@ -17,6 +22,16 @@ public class Slime : MonoBehaviour, IEnemy
 
     void Start()
     {
+        DropTable = new DropTable();
+        DropTable.loot = new List<LootDrop>
+        {
+            new LootDrop("sword", 25),
+            new LootDrop("sword_lava", 25),
+            new LootDrop("potion_log", 25),
+        };
+
+        ID = 0;
+        Exp = 21;
         navAgent = GetComponent<NavMeshAgent>();
         characterStats = new CharacterStats(6, 10, 2);
         currentHealth = maxHealth;
@@ -58,8 +73,21 @@ public class Slime : MonoBehaviour, IEnemy
         }
     }
 
-    void Die()
+    public void Die()
     {
+        DropLoot();
+        CombatEvents.EnemyDied(this);
+        this.Spawner.Respawn();
         Destroy(gameObject);
+    }
+
+    void DropLoot()
+    {
+        Item item = DropTable.GetDrop();
+        if(item != null)
+        {
+            PickupItem instance = Instantiate(pickupItem, transform.position, Quaternion.identity);
+            instance.ItemDrop = item;
+        }
     }
 }
