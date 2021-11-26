@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.54
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 0fcc4abefb0edb249ae887d0178a3e91, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.2817481, g: 0.25501117, b: 0.26614207, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -986,7 +986,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1664732207}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.9545872
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1128,7 +1128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.0012970921}
+  m_AnchoredPosition: {x: 0, y: 0.000012823288}
   m_SizeDelta: {x: 0, y: 387.71}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &432184653
@@ -2186,15 +2186,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4978740289804200, guid: 203571b4bfc0294499a992583d102120, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.576
+      value: -0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4978740289804200, guid: 203571b4bfc0294499a992583d102120, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.545
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 4978740289804200, guid: 203571b4bfc0294499a992583d102120, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.779
+      value: 19.53
       objectReference: {fileID: 0}
     - target: {fileID: 4978740289804200, guid: 203571b4bfc0294499a992583d102120, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3971,7 +3971,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207081736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
   m_LocalScale: {x: 60, y: 1, z: 60}
   m_Children: []
   m_Father: {fileID: 1914254839}
