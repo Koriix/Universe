@@ -6,15 +6,24 @@ using UnityEngine.AI;
 public class WorldInteraction : MonoBehaviour
 {
     NavMeshAgent playerAgent;
+    private Animator animator;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         playerAgent = GetComponent<NavMeshAgent>();
     }
    void Update()
    {
        if(Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
+        {
+           animator.SetBool("isWalking", true);
             GetInteraction();
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
         
         Debug.DrawRay(transform.position, transform.forward * 5f, Color.red);
    }

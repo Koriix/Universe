@@ -8,6 +8,5 @@ public class Signpost : ActionItem
     public override void Interact()
     {
         DialogueSystem.Instance.AddnewDialogue(dialogue, "Sign");
-        Debug.Log("Interacting with Signpost");
     }
 }

@@ -28,6 +28,7 @@ public class PlayerWeaponController : MonoBehaviour
         {
            isWeapon.SetBool("isWeapon", true);
         }
+        
         EquippedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Weapons/" + itemToEquip.ObjectSlug),
             playerHand.transform.position, playerHand.transform.rotation);
         equippedWeapon = EquippedWeapon.GetComponent<IWeapon>();
