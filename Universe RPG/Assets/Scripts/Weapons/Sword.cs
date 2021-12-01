@@ -38,9 +38,8 @@ public class Sword : MonoBehaviour, IWeapon
     {
         if(col.tag == "Enemy")
         {
-            //col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
-            tmpenemy = col.GetComponent<IEnemy>();
-            
+            col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
+            tmpenemy = col.GetComponent<IEnemy>();   
         }
     }
 

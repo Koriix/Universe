@@ -38,9 +38,7 @@ public class Sword_lava : MonoBehaviour, IWeapon
     {
         if(col.tag == "Enemy")
         {
-            //col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
             tmpenemy = col.GetComponent<IEnemy>();
-            
         }
     }
 
@@ -48,9 +46,7 @@ public class Sword_lava : MonoBehaviour, IWeapon
     {
         if(col.tag == "Enemy")
         {
-            //col.GetComponent<IEnemy>().TakeDamage(CharacterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue());
             tmpenemy = null;
-            
         }
     }
 
