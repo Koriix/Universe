@@ -20,6 +20,7 @@ Miben készül?
 -------------
 
 A játékot __Unity__-ben készítem  _C#_ programozási nyelv segítségével.
+Az adatbázis pedig Json-ben készült el.
 
 Használt Asset-tek:
 -------------------
