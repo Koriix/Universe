@@ -6,13 +6,16 @@ using UnityEngine.AI;
 public class WorldInteraction : MonoBehaviour
 {
     NavMeshAgent playerAgent;
-    private Animator animator;
+    public Animator animator;
     private Vector3 lastPos;
     private bool moving;
 
+    public float basespeed;
+    public float runspeed;
+
     void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         playerAgent = GetComponent<NavMeshAgent>();
         lastPos = transform.position;
     }
@@ -20,32 +23,34 @@ public class WorldInteraction : MonoBehaviour
    {
        Vector3 displacement = transform.position - lastPos;
        lastPos = transform.position;
-
-
+       
        if(!Input.GetMouseButtonDown(1))
         {
            Debug.Log(displacement.magnitude);
-           if(displacement.magnitude > 0.005 && displacement.magnitude < 1)
-            {
+
+           if(displacement.magnitude > 0.005 && displacement.magnitude < 0.09)
                 moving = true;
-            } else {
+            else
                 moving = false;
-            }
         }
 
-        if(!moving)
-            animator.SetBool("isWalking", false);
+        if(moving)
+            animator.SetBool("isWalking", true);
         else
-           animator.SetBool("isWalking", true);
+           animator.SetBool("isWalking", false);
 
        if(Input.GetMouseButtonDown(0) && !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject())
         {
-
             GetInteraction();
         }
-        
-            Debug.DrawRay(transform.position, transform.forward * 5f, Color.red);
+        if(Input.GetKey(KeyCode.LeftShift)){
+                playerAgent.speed = runspeed;
+
+        }else{
+                playerAgent.speed = basespeed;
+
         }
+    }
 
    void GetInteraction()
     {

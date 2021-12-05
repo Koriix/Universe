@@ -6,16 +6,17 @@ public class PlayerWeaponController : MonoBehaviour
 {
     public GameObject playerHand;
     public GameObject EquippedWeapon { get; set; }
+    public Animator isWeapon;
 
     Item currentlyEquippedItem;
     IWeapon equippedWeapon;
     CharacterStats characterStats;
-    Animator isWeapon;
+
 
     void Start()
     {
         characterStats = GetComponent<Player>().characterStats;
-        isWeapon = GetComponent<Animator>();
+        //isWeapon = GetComponent<Animator>();
     }
 
     public void EquipWeapon(Item itemToEquip)

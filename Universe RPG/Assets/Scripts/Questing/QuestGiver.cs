@@ -45,7 +45,7 @@ public class QuestGiver : NPC
             Quest.GiveReward();
             Helped = true;
             AssignedQuest = false;
-            DialogueSystem.Instance.AddnewDialogue(new string[] { "Thanks slayer! Take your reward." }, name);
+            DialogueSystem.Instance.AddnewDialogue(new string[] { "Thanks! Take your reward. You finised your first step to be the best Slayer in Universe." }, name);
         }
         else
         {
