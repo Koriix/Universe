@@ -12,6 +12,10 @@ Miről szól?
 
 Egy RPG játék kezdetleges változata, ahol szabadon játszhatsz barátaiddal egy olyan világban ahol bármi megtörténhet. A The Universe-t MMO-RPG játékok inspirálták.
 
+Jelenlegi állapota:
+-------------------
+A játékban jelenleg olyan alap mechanikákat lehet kipróbálni mint például interakció és beszéd NPC-vel, tárgyak felvétele, az első quest elfogadása, Slime-ok ölése és egy kezdetleges inventory illetve HUD rendszer.
+
 Miben készül?
 -------------
 
