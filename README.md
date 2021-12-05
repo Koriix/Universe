@@ -25,7 +25,7 @@ Az adatbázis pedig Json-ben készült el.
 Használt Asset-tek:
 -------------------
 
-_(Az asset-teket a Unity Asset Store-ban szereztem be.)_
+_(Az asset-teket a Unity Asset Store-ban szereztem be. Az összes Asset INGYENES)_
 
 + AllSky Free - 10 Sky / Skybox Set: https://assetstore.unity.com/packages/2d/textures-materials/sky/allsky-free-10-sky-skybox-set-146014
 + Basic Motions FREE: https://assetstore.unity.com/packages/3d/animations/basic-motions-free-154271
