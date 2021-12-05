@@ -22,6 +22,7 @@ public class InventoryController : MonoBehaviour
         consumableController = GetComponent<ConsumableController>();
         GiveItem("sword");
         GiveItem("potion_log");
+        GiveItem("sword_lava");
     }
 
     public void GiveItem(string itemSlug)

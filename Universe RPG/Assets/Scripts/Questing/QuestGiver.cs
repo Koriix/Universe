@@ -7,6 +7,8 @@ public class QuestGiver : NPC
     public bool AssignedQuest { get; set; }
     public bool Helped { get; set; }
 
+    public DialogueSystem dialogsys;
+
     [SerializeField]
     private GameObject quests;
     [SerializeField]
@@ -25,7 +27,7 @@ public class QuestGiver : NPC
         }
         else
         {
-            //DialogueSystem.Instance.AddNewDialogue(new string[] { "Thanks slayer!" }, name);
+            DialogueSystem.Instance.AddnewDialogue(new string[] { "Thanks slayer!" }, name);
         }
     }
 
@@ -37,16 +39,17 @@ public class QuestGiver : NPC
 
     void CheckQuest()
     {
+        //Quest.CheckGoals();
         if(Quest.Completed)
         {
             Quest.GiveReward();
             Helped = true;
             AssignedQuest = false;
-            //DialogueSystem.Instance.AddNewDialogue(new string[] { "Thanks slayer! Take your reward." }, name);
+            DialogueSystem.Instance.AddnewDialogue(new string[] { "Thanks slayer! Take your reward." }, name);
         }
         else
         {
-            //DialogueSystem.Instance.AddNewDialogue(new string[] { "Come on kill those monsters!" }, name);
+            DialogueSystem.Instance.AddnewDialogue(new string[] { "Come on kill those monsters!" }, name);
         } 
     }
 }

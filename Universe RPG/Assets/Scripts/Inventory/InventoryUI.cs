@@ -28,7 +28,7 @@ public class InventoryUI : MonoBehaviour
 
     public void ItemAdded(Item item)
     {
-        InventoryUIItem emptyItem = Instantiate(itemContainer);
+        InventoryUIItem emptyItem = Instantiate(itemContainer); //klónozza az adott item eredeti változatát
         emptyItem.SetItem(item);
         emptyItem.transform.SetParent(scrollViewContent);
     }

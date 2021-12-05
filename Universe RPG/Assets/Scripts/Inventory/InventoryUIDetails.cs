@@ -53,6 +53,5 @@ public class InventoryUIDetails : MonoBehaviour
         }
         item = null;
         gameObject.SetActive(false);
-        //RemoveItem();
     }
 }

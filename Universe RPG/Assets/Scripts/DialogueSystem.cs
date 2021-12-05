@@ -9,7 +9,6 @@ public class DialogueSystem : MonoBehaviour
     public GameObject dialoguePanel;
     public string npcName;
     public List<string> dialogueLines = new List<string>();
-
     public Button nextButton; 
 
     Text dialogueText, nameText;
@@ -34,7 +33,6 @@ public class DialogueSystem : MonoBehaviour
 
     public void Start()
     {
-        //nextButton = dialoguePanel.transform.Find("Next").gameObject.GetComponent<Button>();
         nextButton.onClick.AddListener(ContinueDialogue);
     }
 
@@ -42,7 +40,7 @@ public class DialogueSystem : MonoBehaviour
     {
         dialogueIndex = 0;
         dialogueLines = new List<string>(lines.Length);
-        dialogueLines.AddRange(lines);
+        dialogueLines.AddRange(lines); //elemek hozzáfűzése
         this.npcName = npcName;
 
         CreateDialogue();
@@ -67,4 +65,8 @@ public class DialogueSystem : MonoBehaviour
             dialoguePanel.SetActive(false);
         }
     }
+
+    public string getValami(){
+        return "Anyád";
+    } 
 }

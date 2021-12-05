@@ -70,11 +70,6 @@ public class PlayerWeaponController : MonoBehaviour
             equippedWeapon.PeformAttack(CalculateDamage()); 
     }
 
-    public void PerformWeaponSpecialAttack()
-    {
-        equippedWeapon.PeformSpecialAttack();
-    }
-
     private int CalculateDamage()
     {
         int damageToDeal = (characterStats.GetStat(BaseStat.BaseStatType.Power).GetCalculatedStatValue())

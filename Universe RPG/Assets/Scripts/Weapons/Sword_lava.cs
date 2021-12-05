@@ -18,8 +18,6 @@ public class Sword_lava : MonoBehaviour, IWeapon
         animator = GetComponent<Animator>();
     }
 
-    
-
     public void PeformAttack(int damage)
     {
         CurrentDamage = damage;
@@ -27,11 +25,6 @@ public class Sword_lava : MonoBehaviour, IWeapon
         if(tmpenemy != null)
             tmpenemy.TakeDamage(CurrentDamage);
         Debug.Log("Current Damage: " + CurrentDamage);
-    }
-
-    public void PeformSpecialAttack()
-    {
-        animator.SetTrigger("Special_Attack");
     }
 
     void OnTriggerEnter(Collider col)

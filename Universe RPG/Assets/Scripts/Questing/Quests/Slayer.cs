@@ -12,7 +12,6 @@ public class Slayer : Quest
         ExpReward = 100;
 
         Goals.Add(new KillGoal(this, 0, "Kill 5 Slimes", false, 0, 5));
-        //Goals.Add(new KillGoal(this, 1, "Kill 3 Vampires", false, 0, 3));
 
         Goals.ForEach(g => g.Init());
     }

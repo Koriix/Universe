@@ -14,7 +14,11 @@ public class Quest : MonoBehaviour
 
     public void CheckGoals()
     {
-        Completed = Goals.All(g => g.Completed);
+        //Completed = Goals.All(g => g.Completed);
+        foreach (var g in Goals) {
+            Debug.Log(g.Completed);
+            Completed = g.Completed;
+        }
     }
 
     public void GiveReward()

@@ -7,5 +7,4 @@ public interface IWeapon
    List<BaseStat> Stats { get; set; }
    int CurrentDamage { get; set; }
    void PeformAttack(int damage);
-   void PeformSpecialAttack();
 }

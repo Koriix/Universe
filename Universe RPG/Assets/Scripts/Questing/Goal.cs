@@ -10,11 +10,8 @@ public class Goal
     public int CurrentAmount { get; set; }
     public int RequiredAmount { get; set; }
 
-    public virtual void Init()
-    {
-        
-    }
-
+    public virtual void Init() {}
+    
     public void Evaulate()
     {
         if(CurrentAmount >= RequiredAmount)
@@ -25,7 +22,8 @@ public class Goal
 
     public void Complete()
     {
-        Quest.CheckGoals();
         Completed = true;
+        Quest.CheckGoals();
+
     }
 }

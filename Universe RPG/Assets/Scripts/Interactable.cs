@@ -15,7 +15,7 @@ public class Interactable : MonoBehaviour
         isEnemy = gameObject.tag == "Enemy";
         hasInteracted = false;
         this.playerAgent = playerAgent;
-        playerAgent.stoppingDistance = 3f;
+        playerAgent.stoppingDistance = 3.5f;
         playerAgent.destination = transform.position;
     }
 
@@ -33,6 +33,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
+    //karakterrel való "szemkontaktus"
     void EnsureLookDirection()
     {
         playerAgent.updateRotation = false;
